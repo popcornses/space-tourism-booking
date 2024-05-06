@@ -19,12 +19,33 @@ nav ul {
 }
 
 nav li {
+  position: relative;
   margin-right: 20px;
 }
 
-nav a {
+.nav-link {
   color: #fff;
   text-decoration: none;
+  padding: 10px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  width: 200px;
+  z-index: 1;
+}
+
+.submenu li {
+  display: block;
+}
+
+.submenu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
 }
 
 .hero {
@@ -36,22 +57,39 @@ nav a {
   text-align: center;
 }
 
-.booking-form {
-  padding: 40px;
-}
-
-input, select {
-  width: 100%;
-  padding: 10px;
+.hero h1 {
+  font-size: 36px;
   margin-bottom: 20px;
 }
 
-button {
+.btn {
   background-color: #333;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.content-section {
+  padding: 40px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.content-item {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.content-item h3 {
+  margin-top: 0;
 }
 
 footer {
