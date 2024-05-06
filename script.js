@@ -1,25 +1,14 @@
 // Add your JavaScript code here
-const bookNowBtn = document.getElementById('bookNowBtn');
-const bookingForm = document.getElementById('bookingForm');
+const navLinks = document.querySelectorAll('.nav-link');
 
-bookNowBtn.addEventListener('click', () => {
-  bookingForm.scrollIntoView({ behavior: 'smooth' });
-});
+navLinks.forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    link.classList.add('active');
+    link.querySelector('.submenu').style.display = 'block';
+  });
 
-bookingForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const formData = new FormData(bookingForm);
-  const bookingData = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    destination: formData.get('destination'),
-    date: formData.get('date')
-  };
-
-  // Here you can add the logic to send the booking data to the backend
-  console.log('Booking data:', bookingData);
-
-  // Reset the form
-  bookingForm.reset();
+  link.addEventListener('mouseleave', () => {
+    link.classList.remove('active');
+    link.querySelector('.submenu').style.display = 'none';
+  });
 });
